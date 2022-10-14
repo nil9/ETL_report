@@ -1,0 +1,13 @@
+version: "3"
+services:
+  reportgen:
+    build: ./
+    environment:
+      - LOCAL_PATH='C:\Users\nilanjan.das\Downloads'
+      - REMOTE_PATH='/data'
+    volumes:
+      - reportgen_v:/data
+    command: python3 ./report_generators.py --o_path REMOTE_PATH
+volumes:
+    reportgen_v:
+      external: true
